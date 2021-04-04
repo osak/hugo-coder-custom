@@ -40,7 +40,9 @@
 
 
       <footer>
-        {{ partial "posts/hatenastar.html" . }}
+        {{- if .Params.HatenaStar -}}
+          {{ partial "posts/hatenastar.html" . }}
+        {{- end -}}
         {{ partial "posts/share.html" . }}
         {{ partial "posts/series.html" . }}
         {{ partial "posts/disqus.html" . }}

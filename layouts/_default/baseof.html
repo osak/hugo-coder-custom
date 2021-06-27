@@ -86,6 +86,10 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
     {{ end -}}
 
+    {{ if .Site.Params.hatenaID }}
+      <link rel="author" href="http://www.hatena.ne.jp/{{ .Site.Params.hatenaID }}/" />
+    {{ end }}
+
     {{ if .Site.Params.enableTwemoji }}
       <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
         integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
